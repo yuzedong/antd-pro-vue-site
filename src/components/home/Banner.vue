@@ -18,7 +18,28 @@
       </div>
     </div>
     <div class="banner-image-wrapper" style="opacity: 1;">
-      <img src="/cover1.jpg" style="height: 100%;" />
+<!--      <img src="/cover1.jpg" style="height: 100%;" />-->
+      <a-carousel arrows autoplay>
+        <div
+          slot="prevArrow"
+          slot-scope="props"
+          class="custom-slick-arrow"
+          style="left: 10px;zIndex: 1"
+        >
+          <a-icon type="left-circle" />
+        </div>
+        <div
+          slot="nextArrow"
+          slot-scope="props"
+          class="custom-slick-arrow"
+          style="right: 10px"
+        >
+          <a-icon type="right-circle" />
+        </div>
+        <div v-for="i in 4" :key="i">
+          <img :src="`/cover${i}.jpg`" style="height: 324px"/>
+        </div>
+      </a-carousel>
     </div>
   </div>
 </template>

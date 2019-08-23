@@ -12,6 +12,8 @@ import {
   Icon,
   Select,
   BackTop,
+  Badge,
+  Carousel,
   message,
   notification
 } from 'ant-design-vue'
@@ -28,6 +30,8 @@ Vue.use(Modal)
 Vue.use(Icon)
 Vue.use(Select)
 Vue.use(BackTop)
+Vue.use(Badge)
+Vue.use(Carousel)
 
 Vue.prototype.$message = message
 Vue.prototype.$notification = notification

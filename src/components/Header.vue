@@ -3,8 +3,10 @@
     <a-row>
       <a-col :xs="24" :sm="24" :md="8" :lg="8" :xl="5" :xxl="4">
         <router-link id="logo" :to="{ name: 'home' }">
-          <img src="https://cdn.nlark.com/yuque/0/2019/png/87084/1550242977163-assets/web-upload/5bdc08bb-58a1-4312-8380-d43b1590154c.png" alt="logo"/>
-          <span>Ant Design Pro of Vue</span>
+          <img src="/logo.png" alt="logo"/>
+          <a-badge count="Vue" :number-style="{ right: '-10px' }">
+            <span>Ant Design Pro</span>
+          </a-badge>
         </router-link>
       </a-col>
       <a-col :xs="0" :sm="0" :md="16" :lg="16" :xl="19" :xxl="20">
