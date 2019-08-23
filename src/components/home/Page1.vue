@@ -30,7 +30,7 @@ const featuresCN = [
   },
   {
     title: '最新技术栈',
-    content: '使用 React/dva/antd 等前端前沿技术开发',
+    content: '使用 Vue/vuex/antd 等前端前沿技术开发',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/hBbIHzUsSbSxrhoRFYzi.svg',
     color: '#F5222D',
     shadowColor: 'rgba(245,34,45,.12)'
@@ -96,7 +96,7 @@ const featuresEN = [
   },
   {
     title: 'Up-to-date Dev Stack',
-    content: 'Newest development stack of React/dva/antd',
+    content: 'Newest development stack of Vue/vuex/antd',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/hBbIHzUsSbSxrhoRFYzi.svg',
     color: '#F5222D',
     shadowColor: 'rgba(245,34,45,.12)'
