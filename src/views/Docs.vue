@@ -44,11 +44,11 @@ renderer.heading = function (text, level) {
   // text.replace(/[^\w]+/g, '-') +
   // 生产锚点 a 链接
   const vtext = text.replace(/^\s+|\s+$/g, '-')
-  const vhtml = `<a href="#${vtext}" aria-hidden="true" class="anchor">#</a>`
+  const vhtml = `<a href="#${encodeURIComponent(vtext)}" aria-hidden="true" class="anchor">#</a>`
   return '<h' +
     level +
     ' id="' +
-    vtext +
+    encodeURIComponent(vtext) +
     '">' +
     text + '\n' + vhtml +
     '</h' +
@@ -80,9 +80,10 @@ export default {
     }
   },
   created () {
-    const { $route: { params } } = this
+    const { $route: { params, hash } } = this
     const page = params.page || 'getting-started'
-    this.$router.push({ name: 'docs', params: { page: page, hash: this.$route.hash } })
+    console.log('$route', params, hash)
+    this.$router.push({ name: 'docs', params: { page: page }, hash: hash })
     if (page && page !== '') {
       this.updateMenu()
     }
@@ -93,14 +94,29 @@ export default {
     },
     updateMenu () {
       const { $route: { params }, $message } = this
+      if (!params.page) {
+        return
+      }
       this.selectedKeys = [params.page]
       const md = mdImport(params.page, 'zh-CN')
-      console.log('import markdown:', md)
       md.then((...rest) => {
         this.text = rest[0].default
+        this.jumpToMark()
       }).catch(err => {
         console.log('import err', err)
         $message.error(<span>无法找到改文档或者该文档尚未完成。如果你是开发者，可以获取 <code style="background: #ccc">{err.message}</code> 并完成该文档</span>)
+      })
+    },
+    jumpToMark () {
+      const { $route: { hash } } = this
+      this.$nextTick(() => {
+        setTimeout(() => {
+          const el = document.getElementById(`${hash.substring(1, hash.length)}`)
+          console.log('el', el)
+          if (el) {
+            document.body.scrollTop = parseInt(el.offsetTop)
+          }
+        }, 800)
       })
     }
   },

@@ -92,6 +92,9 @@ export default {
     },
     updateMenu () {
       const { $route: { params }, $message } = this
+      if (!params.page) {
+        return
+      }
       this.selectedKeys = [params.page]
       const md = mdImport(params.page, 'zh-CN')
       console.log('import markdown:', md)

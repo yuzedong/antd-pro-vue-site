@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     setMainClass (bool) {
-      console.log('main class', bool)
       this.mainClass = bool
     }
   }

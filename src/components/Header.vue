@@ -37,7 +37,7 @@
             <a-button @click="langSwitch">{{ $t('header.Menu.langSwitch') }}</a-button>
           </div>
           <div id="menu">
-            <a-menu mode="horizontal" :selectedKeys="selectedKeys" @select="handleSelect">
+            <a-menu mode="horizontal" :selectedKeys="selectedKeys" @click="handleMenuClick">
               <a-menu-item key="home">
                 <router-link :to="{ name: 'home' }">
                   {{ $t('header.Menu.home') }}
@@ -89,8 +89,9 @@ export default {
     }
   },
   methods: {
-    handleSelect ({ selectedKeys }) {
-      this.selectedKeys = selectedKeys
+    handleMenuClick ({ item, key, keyPath }) {
+      console.log('item', item, key, keyPath)
+      this.selectedKeys = keyPath
     },
     handleSearch (value) {
 
