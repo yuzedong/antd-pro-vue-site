@@ -76,6 +76,8 @@ module.exports = {
       }
     }
   },
+  // disable source map in production
+  productionSourceMap: false,
   // true, false, undefined
   lintOnSave: undefined
 }
