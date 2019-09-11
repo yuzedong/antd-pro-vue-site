@@ -2,7 +2,8 @@
   <div class="main-wrapper">
     <a-row>
       <a-col class="main-menu" :xs="24" :sm="24" :md="24" :lg="6" :xl="5" :xxl="4">
-        <section class="main-menu-inner">
+        <a-affix :offset-top="0">
+          <section class="main-menu-inner">
           <a-menu
             class="aside-container"
             mode="inline"
@@ -18,7 +19,8 @@
             </a-menu-item>
           </a-menu>
         </section>
-      </a-col> 
+        </a-affix>
+      </a-col>
       <a-col class="main-container" :xs="24" :sm="24" :md="24" :lg="18" :xl="19" :xxl="20">
         <div class="markdown" v-html="marked(text)">
         </div>
