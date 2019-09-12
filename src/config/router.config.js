@@ -3,6 +3,7 @@ import Home from '@/views/Home'
 const docsRouterMap = [
   {
     title: '入门',
+    enTitle: 'Introduction',
     children: [
       {
         title: '开始使用',
@@ -53,6 +54,7 @@ const docsRouterMap = [
   },
   {
     title: '进阶',
+    enTitle: 'Advanced',
     children: [
       {
         title: '图表',
@@ -93,6 +95,7 @@ const docsRouterMap = [
   },
   {
     title: '其他',
+    enTitle: 'Other',
     children: [
       {
         title: '更新日志',

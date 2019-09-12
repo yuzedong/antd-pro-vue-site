@@ -109,6 +109,9 @@ export default {
   watch: {
     $route () {
       this.updateMenu()
+    },
+    currentLang () {
+      this.updateMenu()
     }
   }
 }

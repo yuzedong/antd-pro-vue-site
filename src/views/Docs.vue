@@ -12,9 +12,9 @@
               :inlineIndent="54"
             >
               <a-menu-item-group v-for="(route, index) in docsRouterMap" :key="index">
-                <template slot="title"><span>{{ route.title }}</span></template>
+                <template slot="title"><span>{{ currentLang !== 'en-US' ? route.title : route.enTitle }}</span></template>
                 <a-menu-item v-for="item in route.children" :key="item.url">
-                  <router-link :to="{ name: 'docs', params: { page: item.url } }"><span>{{ item.title }}</span></router-link>
+                  <router-link :to="{ name: 'docs', params: { page: item.url } }"><span>{{ currentLang !== 'en-US' ? item.title : item.enTitle }}</span></router-link>
                 </a-menu-item>
               </a-menu-item-group>
             </a-menu>
@@ -122,6 +122,9 @@ export default {
   },
   watch: {
     $route () {
+      this.updateMenu()
+    },
+    currentLang () {
       this.updateMenu()
     }
   }
