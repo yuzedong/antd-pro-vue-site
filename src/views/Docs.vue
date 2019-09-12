@@ -98,7 +98,7 @@ export default {
         return
       }
       this.selectedKeys = [params.page]
-      const md = mdImport(params.page, 'zh-CN')
+      const md = mdImport(params.page, this.currentLang)
       md.then((...rest) => {
         this.text = rest[0].default
         this.jumpToMark()
