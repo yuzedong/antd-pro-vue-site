@@ -21,7 +21,6 @@
 - `meta.title` 和 `meta.icon`分别代表生成菜单项的文本和图标。
 - `meta.permission` 用来配置这个路由的权限，如果配置了将会验证当前用户的权限，并决定是否展示 *（默认情况下）。
 - `meta.hiddenHeaderContent` 可以强制当前页面不显示 [PageHeader](https://github.com/sendya/ant-design-pro-vue/tree/master/src/components/PageHeader/PageHeader.vue#L6) 组件中的页面带的 面包屑和页面标题栏
-- `meta.hidden` 特殊属性 (参考`个人设置`) 用于隐藏菜单时，提供递归到父菜单显示 选中菜单项
 
 ### 菜单
 
@@ -106,7 +105,6 @@
 | title               | 路由标题, 用于显示面包屑, 页面标题 *推荐设置                 | string       | -      |
 | icon                | 路由在 menu 上显示的图标                                     | [string,svg] | -      |
 | keepAlive           | 缓存该路由 (开启 multi-tab 是默认值为 true)                  | boolean      | false  |
-| hidden              | 用于隐藏菜单时，提供递归到父菜单显示 选中菜单项_（可参考 个人页 配置方式）_ | boolean      | false  |
 | hiddenHeaderContent | *特殊 隐藏 [PageHeader](https://github.com/sendya/ant-design-pro-vue/blob/master/src/components/layout/PageHeader.vue#L14) 组件中的页面带的 面包屑和页面标题栏 | boolean      | false  |
 | permission          | 与项目提供的权限拦截匹配的权限，如果不匹配，则会被禁止访问该路由页面 | array        | []     |
 
