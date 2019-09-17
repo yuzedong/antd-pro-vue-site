@@ -3,7 +3,7 @@
 Layout is the outermost structure for a project, usually consists of navigation, footer, sidebar, notification and content. There are also a lot of different layouts within a page.
 
 ## Layout in Ant Design Pro
-We abstract common layouts in Ant Design Pro, and put them in `/components/layouts`, includes:
+We abstract common layouts in Ant Design Pro, and put them in `/layouts`, includes:
 
 - BasicLayout: Basic Layout, includes header navigation, sidebar and notification.
 
