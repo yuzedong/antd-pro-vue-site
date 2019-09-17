@@ -106,9 +106,9 @@ export default {
     },
     langSwitch () {
       if (this.currentLang === config.defaultLang) {
-        this.setLang('zh-CN')
-      } else {
         this.setLang('en-US')
+      } else {
+        this.setLang('zh-CN')
       }
     }
   }
