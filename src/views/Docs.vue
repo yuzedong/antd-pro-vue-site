@@ -104,7 +104,7 @@ export default {
         this.jumpToMark()
       }).catch(err => {
         console.log('import err', err)
-        $message.error(<span>无法找到改文档或者该文档尚未完成。如果你是开发者，可以获取 <code style="background: #ccc">{err.message}</code> 并完成该文档<br/>This translate not found</span>)
+        $message.error(<span>该文档尚未完成。如果你是开发者，可以获取 <code style="background: #ccc">{err.message}</code> 并完成该文档<br/>This translate not found</span>)
       })
     },
     jumpToMark () {

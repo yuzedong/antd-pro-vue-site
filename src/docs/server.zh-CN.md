@@ -32,7 +32,7 @@ api/
 
 ```js
 // api/user.js
-import { axios } fromm '@/utils/request'
+import { axios } from '@/utils/request'
 
 const api = {
     info: '/user',
